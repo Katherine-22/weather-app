@@ -1,0 +1,118 @@
+body {
+  font-family: "Nunito", sans-serif;
+}
+.container {
+  margin: 50px auto;
+  max-width: 700px;
+  border: 1px solid rgb(223, 221, 221);
+  border-radius: 10px;
+  padding: 20px;
+  background-image: url("../images/sea.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+.search-bar {
+  background: rgb(223, 221, 221, 0.9);
+  border: none;
+  border-radius: 20px;
+  padding: 5px;
+  width: 200px;
+}
+
+.fahrenheit,
+.celsius {
+  font-size: 20px;
+  color: #6fbcfb;
+  font-weight: 600;
+  padding: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.fahrenheit:hover,
+.celsius:hover {
+  text-decoration: underline;
+}
+.pop-locations {
+  list-style-type: none;
+}
+.pop-locations li {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 20px;
+  color: #6fbcfb;
+  transition: color 100ms ease-in;
+}
+.pop-locations li:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.main-row {
+  margin-top: 15px;
+  background: rgb(223, 221, 221, 0.9);
+  border-radius: 10px;
+  width: 85%;
+  padding-top: 10px;
+}
+
+.main-row h1 {
+  font-size: 32px;
+  margin-top: 10px;
+}
+
+.main-row img {
+  width: 100px;
+}
+
+.main-row p {
+  color: #7a7070;
+}
+
+.main-date {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.indicators {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.forecast-heading {
+  font-size: 22px;
+  color: #6fbcfb;
+  margin-bottom: 10px;
+}
+
+.forecast img {
+  max-width: 50px;
+}
+
+.forecast h3 {
+  font-size: 16px;
+  color: #7a7070;
+  font-weight: normal;
+  display: inline-block;
+  vertical-align: bottom;
+  padding-top: 10px;
+  margin: 10px 0 0 5px;
+}
+
+.lower-temp {
+  color: #988d8d;
+}
+
+.week-day {
+  background: rgb(223, 221, 221, 0.9);
+  margin: 10px;
+  width: 150px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.week-day p {
+  font-size: 16px;
+  color: #2a84cd;
+  margin-top: 10px;
+  font-weight: bold;
+}
