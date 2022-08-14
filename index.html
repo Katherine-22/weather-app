@@ -25,110 +25,120 @@
   <body>
     <div class="container">
       <!-- First row - search-->
-      <div class="row">
-        <div class="col-md-8 search-panel">
-          <form id="search-form">
-            <input
-              type="search"
-              placeholder="Search for location"
-              class="search-bar"
-              id="search-text-input"
-            />
-            <input type="submit" value="Search" class="btn btn-primary" />
-            <button class="btn btn-success" id="current-btn">Current</button>
-          </form>
-        </div>
-
-        <div class="col">
-          <p>
-            <a href="#" class="fahrenheit" id="fahrenheit">F</a> /
-            <a href="#" class="celsius" id="celsius">C</a>
-          </p>
-        </div>
-      </div>
-
-      <div class="row">
-        <ul class="pop-locations">
-          <li id="new-york">New York</li>
-          <li id="kyiv">Kyiv</li>
-          <li id="paris">Paris</li>
-          <li id="rome">Rome</li>
-        </ul>
-      </div>
-      <!-- Second row - main weather-->
-      <div class="row main-row mx-auto text-center">
-        <div class="col-12">
-          <h1 id="main-city"></h1>
-          <p class="main-date" id="main-date"></p>
-        </div>
-
-        <div class="col">
-          <img src="images/sun.png" alt="image of the sun" />
-        </div>
-        <div class="col">
-          <h3>
-            <span id="main-temp"></span> <span>°C</span><br />
-            <span id="main-description"></span>
-          </h3>
-        </div>
-
-        <!-- inner row -->
-        <div class="row mx-auto indicators">
-          <div class="col-4">
-            <p>
-              Humidity <br />
-              <span id="humidity"></span>%
-            </p>
+      <div class="wrapper">
+        <div class="row">
+          <div class="col-md-8 search-panel">
+            <form id="search-form">
+              <input
+                type="search"
+                placeholder="Search for location"
+                class="search-bar"
+                id="search-text-input"
+              />
+              <input type="submit" value="Search" class="btn btn-primary" />
+              <button class="btn btn-success" id="current-btn">Current</button>
+            </form>
           </div>
-          <div class="col-4">
+
+          <div class="col">
             <p>
-              Wind <br />
-              <span id="wind-speed"></span>km/h
-            </p>
-          </div>
-          <div class="col-4">
-            <p>
-              Pressure <br />
-              <span id="pressure"></span>mb
+              <a href="#" class="fahrenheit" id="fahrenheit">F</a> /
+              <a href="#" class="celsius" id="celsius">C</a>
             </p>
           </div>
         </div>
-      </div>
 
-      <p class="forecast-heading">Daily forecast</p>
+        <div class="row">
+          <ul class="pop-locations">
+            <li id="new-york">New York</li>
+            <li id="kyiv">Kyiv</li>
+            <li id="paris">Paris</li>
+            <li id="rome">Rome</li>
+          </ul>
+        </div>
+        <!-- Second row - main weather-->
+        <div class="row main-row mx-auto text-center">
+          <div class="col-12">
+            <h1 id="main-city"></h1>
+            <p class="main-date" id="main-date"></p>
+          </div>
 
-      <div class="row forecast">
-        <div class="col week-day">
-          <img src="images/sun_cloud.png" alt="" />
-          <h3>
-            +31°C <br />
-            <span class="lower-temp">+24°C</span>
-          </h3>
-          <p>Sun, 10.07</p>
+          <div class="col">
+            <img src="images/sun.png" alt="image of the sun" />
+          </div>
+          <div class="col">
+            <h3>
+              <span id="main-temp"></span> <span>°C</span><br />
+              <span id="main-description"></span>
+            </h3>
+          </div>
+
+          <!-- inner row -->
+          <div class="row mx-auto indicators">
+            <div class="col-4">
+              <p>
+                Humidity <br />
+                <span id="humidity"></span>%
+              </p>
+            </div>
+            <div class="col-4">
+              <p>
+                Wind <br />
+                <span id="wind-speed"></span>km/h
+              </p>
+            </div>
+            <div class="col-4">
+              <p>
+                Pressure <br />
+                <span id="pressure"></span>mb
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="col week-day">
-          <img src="images/rain.png" alt="" />
-          <h3>
-            +27°C <br />
-            <span class="lower-temp">+21°C</span>
-          </h3>
-          <p>Mon, 11.07</p>
-        </div>
-        <div class="col week-day">
-          <img src="images/sun_cloud.png" alt="" />
-          <h3>
-            +30°C <br />
-            <span class="lower-temp"> +26°C</span>
-          </h3>
-          <p>Tue, 12.07</p>
-        </div>
-        <div class="col week-day">
-          <img src="images/clouds.png" alt="" />
-          <h3>
-            +29°C <br />
-            <span class="lower-temp">+21°C</span>
-          </h3>
-          <p>Wed, 13.07</p>
+
+        <p class="forecast-heading">Daily forecast</p>
+
+        <div class="row forecast">
+          <div class="col-6 col-md-3 px-1">
+            <div class="week-day">
+              <img src="images/sun_cloud.png" alt="" />
+              <h3>
+                +31°C <br />
+                <span class="lower-temp">+24°C</span>
+              </h3>
+              <p>Sun, 10.07</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 px-1">
+            <div class="week-day">
+              <img src="images/rain.png" alt="" />
+              <h3>
+                +27°C <br />
+                <span class="lower-temp">+21°C</span>
+              </h3>
+              <p>Mon, 11.07</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 px-1">
+            <div class="week-day">
+              <img src="images/sun_cloud.png" alt="" />
+              <h3>
+                +30°C <br />
+                <span class="lower-temp"> +26°C</span>
+              </h3>
+              <p>Tue, 12.07</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 px-1">
+            <div class="week-day">
+              <img src="images/clouds.png" alt="" />
+              <h3>
+                +29°C <br />
+                <span class="lower-temp">+21°C</span>
+              </h3>
+              <p>Wed, 13.07</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
