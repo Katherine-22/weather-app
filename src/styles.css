@@ -22,7 +22,7 @@ body {
 .fahrenheit,
 .celsius {
   font-size: 20px;
-  color: #6fbcfb;
+  color: #d9f3f9;
   font-weight: 600;
   padding: 5px;
   text-decoration: none;
@@ -39,11 +39,11 @@ body {
   display: inline-block;
   margin-right: 20px;
   font-size: 20px;
-  color: #6fbcfb;
+  color: #d9f3f9;
   transition: color 100ms ease-in;
 }
 .pop-locations li:hover {
-  color: #fff;
+  color: #6fbcfb;
   cursor: pointer;
 }
 
@@ -80,7 +80,7 @@ body {
 
 .forecast-heading {
   font-size: 22px;
-  color: #6fbcfb;
+  color: #d9f3f9;
   margin-bottom: 10px;
 }
 
