@@ -2,7 +2,7 @@ body {
   font-family: "Nunito", sans-serif;
 }
 .wrapper {
-  margin: 50px auto;
+  margin: 50px auto 0;
   max-width: 700px;
   border: 1px solid rgb(223, 221, 221);
   border-radius: 10px;
