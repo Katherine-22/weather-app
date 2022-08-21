@@ -1,3 +1,25 @@
+function formatDate(timestamp) {
+  let userDate = new Date(timestamp);
+  let date = userDate.getDate();
+
+  let month = userDate.getMonth() + 1;
+  if (month < 10) {
+    month = `0${month}`;
+  }
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[userDate.getDay()];
+  return `${day}, ${date}.${month}`;
+}
+
 function showWeather(response) {
   let mainCityName = document.querySelector("#main-city");
   mainCityName.innerHTML = response.data.name;
@@ -20,6 +42,9 @@ function showWeather(response) {
 
   let pressure = document.querySelector("#pressure");
   pressure.innerHTML = response.data.main.pressure;
+
+  let dateElement = document.querySelector("#main-date");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 
   //Adding icons from API
   let mainIconElement = document.querySelector("#main-weather-image");
@@ -92,41 +117,6 @@ function romeWeather() {
 }
 let rome = document.querySelector("#rome");
 rome.addEventListener("click", romeWeather);
-
-// date and time
-function showNewDate(userDate) {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[userDate.getDay()];
-  let date = userDate.getDate();
-  if (date < 10) {
-    date = `0${date}`;
-  }
-  let month = userDate.getMonth() + 1;
-  if (month < 10) {
-    month = `0${month}`;
-  }
-  let hours = userDate.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = userDate.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  let sentence = `${day} ${date}.${month}, ${hours}:${minutes}`;
-  return sentence;
-}
-
-let currentDate = document.querySelector("#main-date");
-currentDate.innerHTML = showNewDate(new Date());
 
 //Change temperature units
 function displayFahrenheitTemp(event) {
