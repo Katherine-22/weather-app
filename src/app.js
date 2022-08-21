@@ -2,7 +2,10 @@ function showWeather(response) {
   let mainCityName = document.querySelector("#main-city");
   mainCityName.innerHTML = response.data.name;
 
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+
+  let temperature = Math.round(celsiusTemperature);
+
   let cityTemp = document.querySelector("#main-temp");
   cityTemp.innerHTML = temperature;
 
@@ -124,6 +127,44 @@ function showNewDate(userDate) {
 
 let currentDate = document.querySelector("#main-date");
 currentDate.innerHTML = showNewDate(new Date());
+
+//Change temperature units
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#main-temp");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+
+  let unitElement = document.querySelector("#currentUnit");
+  unitElement.innerHTML = "°F";
+
+  //remove .active from celsiusLink
+  celsiusLink.classList.remove("active");
+  //add .active to fahrenheitLink
+  fahrenheitLink.classList.add("active");
+}
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#main-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+  let unitElement = document.querySelector("#currentUnit");
+  unitElement.innerHTML = "°C";
+
+  //remove .active from fahrenheitLink
+  fahrenheitLink.classList.remove("active");
+  //add .active to celsiusLink
+  celsiusLink.classList.add("active");
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 //default weather
 
