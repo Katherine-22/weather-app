@@ -1,11 +1,5 @@
-function formatDate(timestamp) {
-  let userDate = new Date(timestamp);
-  let date = userDate.getDate();
-
-  let month = userDate.getMonth() + 1;
-  if (month < 10) {
-    month = `0${month}`;
-  }
+function formatDate(cityTime) {
+  geoDate = new Date(cityTime);
 
   let days = [
     "Sunday",
@@ -16,8 +10,29 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
-  let day = days[userDate.getDay()];
-  return `${day}, ${date}.${month}`;
+  let day = days[geoDate.getDay()];
+
+  let date = geoDate.getDate();
+  if (date < 10) {
+    date = `0${date}`;
+  }
+
+  let month = geoDate.getMonth() + 1;
+  if (month < 10) {
+    month = `0${month}`;
+  }
+
+  let hours = geoDate.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = geoDate.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let geoDateString = `${day} ${date}.${month}, ${hours}:${minutes}`;
+  return geoDateString;
 }
 
 function showWeather(response) {
@@ -43,8 +58,16 @@ function showWeather(response) {
   let pressure = document.querySelector("#pressure");
   pressure.innerHTML = response.data.main.pressure;
 
+  //Fixing time zones for the searched city
+
+  d = new Date();
+  localTime = d.getTime();
+  localOffset = d.getTimezoneOffset() * 60000;
+  utc = localTime + localOffset;
+  let cityTime = utc + 1000 * response.data.timezone;
+
   let dateElement = document.querySelector("#main-date");
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  dateElement.innerHTML = formatDate(cityTime);
 
   //Adding icons from API
   let mainIconElement = document.querySelector("#main-weather-image");
