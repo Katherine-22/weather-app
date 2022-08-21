@@ -18,7 +18,14 @@ function showWeather(response) {
   let pressure = document.querySelector("#pressure");
   pressure.innerHTML = response.data.main.pressure;
 
-  // console.log(response.data);
+  //Adding icons from API
+  let mainIconElement = document.querySelector("#main-weather-image");
+
+  mainIconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  mainIconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(city) {
@@ -121,20 +128,3 @@ currentDate.innerHTML = showNewDate(new Date());
 //default weather
 
 search("London");
-
-//Change temperature units
-
-// function changeToFahrenheit() {
-//   let mainTemp = document.querySelector("#main-temp");
-//   mainTemp.innerHTML = "66°F";
-// }
-// function changeToCelsius() {
-//   let temp = document.querySelector("#main-temp");
-//   temp.innerHTML = "33°C";
-// }
-
-// let fahrenheitTemp = document.querySelector("#fahrenheit");
-// fahrenheitTemp.addEventListener("click", changeToFahrenheit);
-
-// let celsiusTemp = document.querySelector("#celsius");
-// celsiusTemp.addEventListener("click", changeToCelsius);
