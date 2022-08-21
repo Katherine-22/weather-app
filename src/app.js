@@ -112,11 +112,11 @@ function parisWeather() {
 let paris = document.querySelector("#paris");
 paris.addEventListener("click", parisWeather);
 
-function romeWeather() {
-  search("Rome");
+function viennaWeather() {
+  search("Vienna");
 }
-let rome = document.querySelector("#rome");
-rome.addEventListener("click", romeWeather);
+let vienna = document.querySelector("#vienna");
+vienna.addEventListener("click", viennaWeather);
 
 //Change temperature units
 function displayFahrenheitTemp(event) {
