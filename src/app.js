@@ -35,6 +35,41 @@ function formatDate(cityTime) {
   return geoDateString;
 }
 
+//Displaying HTML forecast
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#weekly-forecast");
+  let forecastHTML = `<div class="row forecast">`;
+  let days = ["Sun", "Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+    <div class="col-6 col-md-3 px-1">
+              <div class="week-day">
+                <img src="images/sun_cloud.png" alt="" />
+                <h3>
+                  +31°C <br />
+                  <span class="lower-temp">+24°C</span>
+                </h3>
+                <p id="weather-forecast-day">${day}</p>
+              </div>
+            </div>
+          
+    `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastElement);
+}
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "31f7dc5277687ce116d1207621713d35";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showWeather(response) {
   let mainCityName = document.querySelector("#main-city");
   mainCityName.innerHTML = response.data.name;
