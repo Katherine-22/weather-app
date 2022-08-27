@@ -107,11 +107,6 @@ function showWeather(response) {
   let pressure = document.querySelector("#pressure");
   pressure.innerHTML = response.data.main.pressure;
 
-  let unitElement = document.querySelector("#currentUnit");
-  unitElement.innerHTML = "°C";
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-
   //Fixing time zones for the searched city
 
   d = new Date();
@@ -197,44 +192,6 @@ function viennaWeather() {
 }
 let vienna = document.querySelector("#vienna");
 vienna.addEventListener("click", viennaWeather);
-
-//Change temperature units
-function displayFahrenheitTemp(event) {
-  event.preventDefault();
-  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("#main-temp");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
-
-  let unitElement = document.querySelector("#currentUnit");
-  unitElement.innerHTML = "°F";
-
-  //remove .active from celsiusLink
-  celsiusLink.classList.remove("active");
-  //add .active to fahrenheitLink
-  fahrenheitLink.classList.add("active");
-}
-
-function displayCelsiusTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#main-temp");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-
-  let unitElement = document.querySelector("#currentUnit");
-  unitElement.innerHTML = "°C";
-
-  //remove .active from fahrenheitLink
-  fahrenheitLink.classList.remove("active");
-  //add .active to celsiusLink
-  celsiusLink.classList.add("active");
-}
-
-let celsiusTemperature = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 //default weather
 

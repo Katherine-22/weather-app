@@ -19,19 +19,6 @@ body {
   width: 200px;
 }
 
-.fahrenheit,
-.celsius {
-  font-size: 20px;
-  color: #d9f3f9;
-  font-weight: 600;
-  padding: 5px;
-  text-decoration: none;
-  cursor: pointer;
-}
-.fahrenheit:hover,
-.celsius:hover {
-  text-decoration: underline;
-}
 .pop-locations {
   list-style-type: none;
 }
