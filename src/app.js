@@ -93,6 +93,11 @@ function showWeather(response) {
   let pressure = document.querySelector("#pressure");
   pressure.innerHTML = response.data.main.pressure;
 
+  let unitElement = document.querySelector("#currentUnit");
+  unitElement.innerHTML = "°C";
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+
   //Fixing time zones for the searched city
 
   d = new Date();
