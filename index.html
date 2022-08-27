@@ -57,16 +57,18 @@
           </ul>
         </div>
         <!-- Second row - main weather-->
-        <div class="row main-row mx-auto text-center">
+        <div
+          class="row main-row mx-auto text-center d-flex justify-content-center"
+        >
           <div class="col-12">
             <h1 id="main-city"></h1>
             <p class="main-date" id="main-date"></p>
           </div>
 
-          <div class="col">
+          <div class="col-xs-12 col-sm-3">
             <img src="" alt="" id="main-weather-image" />
           </div>
-          <div class="col">
+          <div class="col-xs-12 col-sm-5">
             <h3>
               <span id="main-temp"></span> <span id="currentUnit">°C</span
               ><br />
@@ -97,49 +99,9 @@
           </div>
         </div>
 
-        <p class="forecast-heading">Daily forecast</p>
-
-        <div class="row forecast">
-          <div class="col-6 col-md-3 px-1">
-            <div class="week-day">
-              <img src="images/sun_cloud.png" alt="" />
-              <h3>
-                +31°C <br />
-                <span class="lower-temp">+24°C</span>
-              </h3>
-              <p>Sun, 10.07</p>
-            </div>
-          </div>
-          <div class="col-6 col-md-3 px-1">
-            <div class="week-day">
-              <img src="images/rain.png" alt="" />
-              <h3>
-                +27°C <br />
-                <span class="lower-temp">+21°C</span>
-              </h3>
-              <p>Mon, 11.07</p>
-            </div>
-          </div>
-          <div class="col-6 col-md-3 px-1">
-            <div class="week-day">
-              <img src="images/sun_cloud.png" alt="" />
-              <h3>
-                +30°C <br />
-                <span class="lower-temp"> +26°C</span>
-              </h3>
-              <p>Tue, 12.07</p>
-            </div>
-          </div>
-          <div class="col-6 col-md-3 px-1">
-            <div class="week-day">
-              <img src="images/clouds.png" alt="" />
-              <h3>
-                +29°C <br />
-                <span class="lower-temp">+21°C</span>
-              </h3>
-              <p>Wed, 13.07</p>
-            </div>
-          </div>
+        <p class="forecast-heading" id="forecast">Daily forecast</p>
+        <div id="weekely-forecast">
+          <!--Forecast contents are in app.js-->
         </div>
       </div>
 
