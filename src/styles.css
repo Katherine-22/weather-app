@@ -60,12 +60,16 @@ body {
   margin-top: 10px;
 }
 
-.main-row img {
-  width: 100px;
+.main-row h3 {
+  margin-top: 20px;
 }
 
-.main-row p {
-  color: #7a7070;
+#main-description::first-letter {
+  text-transform: capitalize;
+}
+
+.main-row img {
+  width: 110px;
 }
 
 .main-date {
@@ -98,6 +102,9 @@ body {
   margin: 10px 0 0 5px;
 }
 
+.max-temp {
+  color: #3c3a3a;
+}
 .lower-temp {
   color: #988d8d;
 }
@@ -112,6 +119,7 @@ body {
   font-size: 16px;
   color: #2a84cd;
   margin-top: 10px;
+  padding-bottom: 10px;
   font-weight: bold;
 }
 
