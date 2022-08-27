@@ -36,7 +36,7 @@ body {
 
 .main-row {
   margin-top: 15px;
-  background: rgba(198, 203, 241, 0.9);
+  background: rgb(255, 235, 205, 0.9);
   border-radius: 10px;
   width: 85%;
   padding-top: 10px;
@@ -56,7 +56,7 @@ body {
 }
 
 .main-row img {
-  width: 110px;
+  width: 130px;
 }
 
 .main-date {
@@ -85,8 +85,7 @@ body {
   font-weight: normal;
   display: inline-block;
   vertical-align: bottom;
-  padding-top: 10px;
-  margin: 10px 0 0 5px;
+  margin: 0;
 }
 
 .max-temp {
@@ -97,7 +96,7 @@ body {
 }
 
 .week-day {
-  background: rgba(198, 203, 241, 0.9);
+  background: rgb(255, 235, 205, 0.9);
   text-align: center;
   border-radius: 10px;
 }
@@ -105,7 +104,6 @@ body {
 .week-day p {
   font-size: 16px;
   color: #2a84cd;
-  margin-top: 10px;
   padding-bottom: 10px;
   font-weight: bold;
 }

@@ -55,12 +55,12 @@ function displayForecast(response) {
         ` 
     <div class="col-4 col-md-2 px-1">
               <div class="week-day">
-                <img src="http://openweathermap.org/img/wn/${
+                <img src="images/icons/${
                   forecastDay.weather[0].icon
-                }@2x.png" alt="" />
+                }.svg" alt="" />
                 <h3>
                 <span class="max-temp">
-                  ${Math.round(forecastDay.temp.max)}</span>  <br />
+                  ${Math.round(forecastDay.temp.max)}° / </span> 
                   <span class="lower-temp">${Math.round(
                     forecastDay.temp.min
                   )}</span>
@@ -123,7 +123,7 @@ function showWeather(response) {
 
   mainIconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `images/icons/${response.data.weather[0].icon}.svg`
   );
   mainIconElement.setAttribute("alt", response.data.weather[0].description);
 
